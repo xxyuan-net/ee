@@ -1,6 +1,7 @@
 package com.xxyuan.integration.controller;
 
 
+import com.xxyuan.integration.model.BaseResult;
 import com.xxyuan.integration.model.User;
 import com.xxyuan.integration.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,12 @@ public class UserController {
     @RequestMapping(value = "/all/{pageNum}/{pageSize}", produces = {"application/json;charset=UTF-8"})
     public Object findAllUser(@PathVariable("pageNum") int pageNum, @PathVariable("pageSize") int pageSize) {
 
-        return userService.findAllUser(pageNum, pageSize);
+        BaseResult result = new BaseResult();
+        result.setCode("200");
+        result.setMsg("获取user列表成功");
+        result.setUserList(userService.findAllUser(pageNum, pageSize));
+
+        return result;
     }
 }
 
