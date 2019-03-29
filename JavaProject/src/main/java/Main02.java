@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import util.TextUtils;
 import util.ZipUtils;
 
-import javax.xml.soap.Text;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +13,7 @@ public class Main02 {
         try {
             String fileString = TextUtils.getFileString("C:\\Users\\ThinkPad\\Desktop\\data\\1234.txt");
 
+            String org ="河北省电力公司";
             BarCodeBean barCodeBean = JSON.parseObject(fileString, BarCodeBean.class);
             List<BarCodeBean.TaskDetailEntity> taskDetail = barCodeBean.getTaskDetail();
 
@@ -23,7 +23,7 @@ public class Main02 {
                 taskDetail_copy1.add(taskDetail.get(i));
             }
             BarCodeBean barCodeBean1 = new BarCodeBean();
-            barCodeBean1.setOrgName("河北省电力公司");
+            barCodeBean1.setOrgName(new String(org.getBytes( "UTF-8")));
             barCodeBean1.setTaskNo("20190328030001");
             barCodeBean1.setTaskDetail(taskDetail_copy1);
 
@@ -37,7 +37,7 @@ public class Main02 {
                 taskDetail_copy2.add(taskDetail.get(i));
             }
             BarCodeBean barCodeBean2 = new BarCodeBean();
-            barCodeBean2.setOrgName("河北省电力公司");
+            barCodeBean2.setOrgName(new String(org.getBytes( "UTF-8")));
             barCodeBean2.setTaskNo("20190328030001");
             barCodeBean2.setTaskDetail(taskDetail_copy2);
 
@@ -51,7 +51,7 @@ public class Main02 {
                 taskDetail_copy3.add(taskDetail.get(i));
             }
             BarCodeBean barCodeBean3 = new BarCodeBean();
-            barCodeBean3.setOrgName("河北省电力公司");
+            barCodeBean3.setOrgName(new String(org.getBytes("UTF-8")));
             barCodeBean3.setTaskNo("20190328030001");
             barCodeBean3.setTaskDetail(taskDetail_copy3);
 
@@ -60,9 +60,11 @@ public class Main02 {
 
 
             BarCodeResultBean barCodeResultBean = new BarCodeResultBean();
-            barCodeResultBean.setList1(s1);
-            barCodeResultBean.setList2(s2);
-            barCodeResultBean.setList3(s3);
+            List<String>  list = new ArrayList<>();
+            list.add(s1);
+            list.add(s2);
+            list.add(s3);
+            barCodeResultBean.setList(list);
 
             String barCodeResultBeanString = JSON.toJSONString(barCodeResultBean);
 
