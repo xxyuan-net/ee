@@ -47,7 +47,7 @@ public class Main02 {
 
             List<BarCodeBean.TaskDetailEntity> taskDetail_copy3 = new ArrayList<>();
 
-            for (int i = 80000; i < taskDetail.size(); i++) {
+            for (int i = 80000; i < 120000; i++) {
                 taskDetail_copy3.add(taskDetail.get(i));
             }
             BarCodeBean barCodeBean3 = new BarCodeBean();
@@ -58,12 +58,39 @@ public class Main02 {
             String toJSON3 = JSON.toJSONString(barCodeBean3);
             String s3 = ZipUtils.compressForGzip(toJSON3);
 
+            List<BarCodeBean.TaskDetailEntity> taskDetail_copy4 = new ArrayList<>();
+
+            for (int i = 120000; i < 160000; i++) {
+                taskDetail_copy4.add(taskDetail.get(i));
+            }
+            BarCodeBean barCodeBean4 = new BarCodeBean();
+            barCodeBean4.setOrgName(new String(org.getBytes("UTF-8")));
+            barCodeBean4.setTaskNo("20190328030001");
+            barCodeBean4.setTaskDetail(taskDetail_copy4);
+
+            String toJSON4 = JSON.toJSONString(barCodeBean4);
+            String s4 = ZipUtils.compressForGzip(toJSON4);
+
+            List<BarCodeBean.TaskDetailEntity> taskDetail_copy5 = new ArrayList<>();
+
+            for (int i = 160000; i < taskDetail.size(); i++) {
+                taskDetail_copy5.add(taskDetail.get(i));
+            }
+            BarCodeBean barCodeBean5 = new BarCodeBean();
+            barCodeBean5.setOrgName(new String(org.getBytes("UTF-8")));
+            barCodeBean5.setTaskNo("20190328030001");
+            barCodeBean5.setTaskDetail(taskDetail_copy5);
+
+            String toJSON5 = JSON.toJSONString(barCodeBean5);
+            String s5 = ZipUtils.compressForGzip(toJSON5);
 
             BarCodeResultBean barCodeResultBean = new BarCodeResultBean();
             List<String>  list = new ArrayList<>();
             list.add(s1);
             list.add(s2);
             list.add(s3);
+            list.add(s4);
+            list.add(s5);
             barCodeResultBean.setList(list);
 
             String barCodeResultBeanString = JSON.toJSONString(barCodeResultBean);
