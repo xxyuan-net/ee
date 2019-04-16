@@ -1,4 +1,4 @@
-package util;
+package com.xxyuan.util;
 
 import java.io.*;
 

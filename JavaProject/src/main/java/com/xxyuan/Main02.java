@@ -1,8 +1,10 @@
-import bean.BarCodeBean;
-import bean.BarCodeResultBean;
+package com.xxyuan;
+
+import com.xxyuan.bean.BarCodeBean;
+import com.xxyuan.bean.BarCodeResultBean;
 import com.alibaba.fastjson.JSON;
-import util.TextUtils;
-import util.ZipUtils;
+import com.xxyuan.util.TextUtils;
+import com.xxyuan.util.ZipUtils;
 
 import java.util.ArrayList;
 import java.util.List;
