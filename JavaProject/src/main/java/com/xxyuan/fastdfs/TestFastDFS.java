@@ -1,14 +1,13 @@
 package com.xxyuan.fastdfs;
 
 import org.csource.fastdfs.*;
-import org.springframework.core.io.ClassPathResource;
 
 public class TestFastDFS {
     public static void main(String[] args) throws Exception {
 
-        String filePath = new ClassPathResource("./fdfs_client.conf").getFile().getAbsolutePath();
+//        String filePath = new ClassPathResource("./fdfs_client.conf").getFile().getAbsolutePath();
         // 1、加载配置文件，配置文件中的内容就是 tracker 服务的地址。
-        ClientGlobal.init(filePath);
+        ClientGlobal.init("E:\\project\\git_project\\ee\\JavaProject\\src\\main\\java\\com\\xxyuan\\fastdfs\\fdfs_client.conf");
         // 2、创建一个 TrackerClient 对象。直接 new 一个。
         TrackerClient trackerClient = new TrackerClient();
         // 3、使用 TrackerClient 对象创建连接，获得一个 TrackerServer 对象。
@@ -20,7 +19,7 @@ public class TestFastDFS {
         // 6、使用 StorageClient 对象上传图片。
         //扩展名不带“.”
         String[] strings = storageClient.upload_file(
-                "C:\\Users\\ThinkPad\\Desktop\\tupian.png", "png",
+                "C:/Users/ThinkPad/desktop/tupian.png", "png",
                 null);
 
         // 7、返回数组。包含组名和图片的路径。
