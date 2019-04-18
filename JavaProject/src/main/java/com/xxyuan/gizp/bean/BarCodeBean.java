@@ -1,4 +1,4 @@
-package com.xxyuan.bean;
+package com.xxyuan.gizp.bean;
 
 import java.util.List;
 

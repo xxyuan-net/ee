@@ -1,7 +1,7 @@
-package com.xxyuan;
+package com.xxyuan.gizp;
 
-import com.xxyuan.bean.BarCodeBean;
-import com.xxyuan.bean.BarCodeResultBean;
+import com.xxyuan.gizp.bean.BarCodeBean;
+import com.xxyuan.gizp.bean.BarCodeResultBean;
 import com.alibaba.fastjson.JSON;
 import com.xxyuan.util.TextUtils;
 import com.xxyuan.util.ZipUtils;
