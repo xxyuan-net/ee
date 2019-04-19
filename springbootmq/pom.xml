@@ -8,15 +8,13 @@
         <version>2.1.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.xxyuan.els</groupId>
-    <artifactId>elasticsearch</artifactId>
+    <groupId>com.xxyuan</groupId>
+    <artifactId>springbootmq</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>elasticsearch</name>
+    <name>springbootmq</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
 
@@ -28,20 +26,9 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-        </dependency>
-
     </dependencies>
 
     <build>
