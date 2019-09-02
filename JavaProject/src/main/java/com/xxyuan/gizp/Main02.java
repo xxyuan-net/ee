@@ -19,7 +19,7 @@ public class Main02 {
             BarCodeBean barCodeBean = JSON.parseObject(fileString, BarCodeBean.class);
             List<BarCodeBean.TaskDetailEntity> taskDetail = barCodeBean.getTaskDetail();
 
-            List<BarCodeBean.TaskDetailEntity> taskDetail_copy1 = new ArrayList<>();
+            List<BarCodeBean.TaskDetailEntity> taskDetail_copy1 = new ArrayList();
 
             for (int i = 0; i < 40000; i++) {
                 taskDetail_copy1.add(taskDetail.get(i));
@@ -33,7 +33,7 @@ public class Main02 {
             String s1 = ZipUtils.compressForGzip(toJSON);
 
 
-            List<BarCodeBean.TaskDetailEntity> taskDetail_copy2 = new ArrayList<>();
+            List<BarCodeBean.TaskDetailEntity> taskDetail_copy2 = new ArrayList();
 
             for (int i = 40000; i < 80000; i++) {
                 taskDetail_copy2.add(taskDetail.get(i));
@@ -47,7 +47,7 @@ public class Main02 {
             String s2 = ZipUtils.compressForGzip(toJSON2);
 
 
-            List<BarCodeBean.TaskDetailEntity> taskDetail_copy3 = new ArrayList<>();
+            List<BarCodeBean.TaskDetailEntity> taskDetail_copy3 = new ArrayList();
 
             for (int i = 80000; i < 120000; i++) {
                 taskDetail_copy3.add(taskDetail.get(i));
@@ -60,7 +60,7 @@ public class Main02 {
             String toJSON3 = JSON.toJSONString(barCodeBean3);
             String s3 = ZipUtils.compressForGzip(toJSON3);
 
-            List<BarCodeBean.TaskDetailEntity> taskDetail_copy4 = new ArrayList<>();
+            List<BarCodeBean.TaskDetailEntity> taskDetail_copy4 = new ArrayList();
 
             for (int i = 120000; i < 160000; i++) {
                 taskDetail_copy4.add(taskDetail.get(i));
@@ -73,7 +73,7 @@ public class Main02 {
             String toJSON4 = JSON.toJSONString(barCodeBean4);
             String s4 = ZipUtils.compressForGzip(toJSON4);
 
-            List<BarCodeBean.TaskDetailEntity> taskDetail_copy5 = new ArrayList<>();
+            List<BarCodeBean.TaskDetailEntity> taskDetail_copy5 = new ArrayList();
 
             for (int i = 160000; i < taskDetail.size(); i++) {
                 taskDetail_copy5.add(taskDetail.get(i));
@@ -87,7 +87,7 @@ public class Main02 {
             String s5 = ZipUtils.compressForGzip(toJSON5);
 
             BarCodeResultBean barCodeResultBean = new BarCodeResultBean();
-            List<String>  list = new ArrayList<>();
+            List<String>  list = new ArrayList();
             list.add(s1);
             list.add(s2);
             list.add(s3);
