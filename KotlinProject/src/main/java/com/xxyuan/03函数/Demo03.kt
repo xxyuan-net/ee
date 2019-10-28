@@ -1,4 +1,4 @@
-package com.xxyuan.函数
+package com.xxyuan.`03函数`
 
 /**
  * 可变长参数函数
