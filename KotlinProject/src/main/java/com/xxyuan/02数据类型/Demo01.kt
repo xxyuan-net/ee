@@ -1,5 +1,8 @@
-package com.xxyuan.`02String模板`
+package com.xxyuan.`02数据类型`
 
+/**
+ * 字符串模板
+ */
 fun main() {
     var a = 1
     // 模板中的简单名称：
